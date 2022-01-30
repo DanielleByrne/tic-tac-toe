@@ -54,6 +54,7 @@ function checkForWinner() {
   }
   if (roundOver) {
     winnerAlert.classList.remove("hide");
+    gameActive=false
     console.log("round over")
   }
 }
