@@ -82,9 +82,7 @@ cells.forEach((cell, index) => {
 
 
 //reset board
-
-
-const resetGameBoard= () => {
+const resetGameBoard =() => {
     gameBoard = ["", "", "", "", "", "", "", "", ""];
     gameActive = true
     winnerAlert.classList.add("hidden")
