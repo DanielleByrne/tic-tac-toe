@@ -16,6 +16,23 @@ let currentPlayer= "x"
 let gameActive= true
 
 
+
+// the different combinations of ways a player can win 
+// 0 1 2
+// 3 4 5 
+// 6 7 8
+const winningCombinations = [
+    [0,1,2],
+    [0,3,6],
+    [6,7,8],
+    [2,5,8],
+    [3,4,5],
+    [0,4,8],
+    [6,4,2],
+    [1,4,7]
+]
+
+//changes the current player to the next one and updates the html on the page with the current player
 const changePlayer = () => {
     currentPlayer = currentPlayer === "x" ? "o" : "x"
     playerTurn.innerHTML = `It's player ${currentPlayer}'s turn`
@@ -47,9 +64,5 @@ cells.forEach((cell, index ) => {
 
 
 
-
-const playerXWins = "Player X Won"
-const playerOWins = "Player O Won"
-const tie = "Tie"
 
 
