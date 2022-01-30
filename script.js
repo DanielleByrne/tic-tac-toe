@@ -12,17 +12,32 @@ const resetButton = document.querySelector(".reset-button")
 
 //setting up an empty array for the game, a current player, and that the game is running
 let gameBoard = ['','','','','','','','','',]
-let currentPlayer= "O"
+let currentPlayer= "x"
 let gameActive= true
+
+
+const changePlayer = () => {
+    currentPlayer = currentPlayer === "x" ? "o" : "x"
+    playerTurn.innerHTML = `It's player ${currentPlayer}'s turn`
+}
+
+
+
+
 
 
 // handle click function, should on a click add the x or o and give the index of where they clicked
 const handleClick = (cell, index) => {
     if (gameActive === true){
         cell.innerHTML= currentPlayer
+        // updateGameBoard(index)
+        // checkForWinner()
+        changePlayer()
     } else (console.log("game isn't active"))
     console.log(currentPlayer, index)
 }
+
+
 
 
 // adding an event listener to each button with cell class
