@@ -53,7 +53,8 @@ function checkForWinner() {
     }
   }
   if (roundOver) {
-    winnerAlert.classList.remove("hide");
+    winnerAlert.classList.remove("hidden");
+    winnerAlert.innerHTML= `Player ${currentPlayer} won!`
     gameActive=false
     console.log("round over")
   }
@@ -78,3 +79,6 @@ const handleClick = (cell, index) => {
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => handleClick(cell, index));
 });
+
+
+//reset board
