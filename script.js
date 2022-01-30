@@ -1,6 +1,6 @@
 
 // grabbing each button with the class of cell and saving it to a variable
-const cells = document.querySelectorAll("button.cell")
+const cells = Array.from(document.querySelectorAll("button.cell"))
 
 // grabbing the player turn area 
 const playerTurn = document.querySelector(".player-turn")
@@ -15,9 +15,8 @@ let gameBoard = ['','','','','','','','','',]
 let currentPlayer= "O"
 let gameActive= true
 
-//looping over each cell and adding an event listener to it
-// {once: true} makes it so that it can only be clicked once 
 
+// handle click function, should on a click add the x or o and give the index of where they clicked
 const handleClick = (cell, index) => {
     if (gameActive === true){
         cell.innerHTML= currentPlayer
@@ -28,7 +27,7 @@ const handleClick = (cell, index) => {
 
 // adding an event listener to each button with cell class
 cells.forEach((cell, index ) => {
-    cell.addEventListener("click", handleClick(cell, index), {once: true})
+    cell.addEventListener("click", () => handleClick(cell, index))
 })
 
 
