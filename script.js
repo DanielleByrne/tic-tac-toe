@@ -82,3 +82,12 @@ cells.forEach((cell, index) => {
 
 
 //reset board
+
+
+const resetGameBoard= () => {
+    gameBoard = ["", "", "", "", "", "", "", "", ""];
+    gameActive = true
+    winnerAlert.classList.add("hidden")
+}
+
+resetButton.addEventListener("click", resetGameBoard)
